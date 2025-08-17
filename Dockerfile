@@ -9,7 +9,7 @@ USER root
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
 # Instalar Git, cron y un editor de texto (nano)
-RUN apk add --no-cache git openssh cron nano
+RUN apk add --no-cache git openssh dcron nano
 
 # Crear directorio para el script de sincronización
 RUN mkdir -p /app/scripts
