@@ -1,0 +1,22 @@
+
+# fly.toml
+# Usa la máquina virtual más pequeña para mantenerte en el plan gratuito
+[guest]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+# Configuración del servicio para que se apague y encienda automáticamente
+[[services]]
+  protocol = "tcp"
+  internal_port = 5678
+  auto_stop_machines = true    # Apaga la máquina cuando está inactiva
+  auto_start_machines = true   # Enciende la máquina al recibir tráfico (¡incluyendo webhooks!)
+  min_machines_running = 0     # Permite que el número de máquinas llegue a cero
+  
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
