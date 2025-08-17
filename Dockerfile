@@ -6,6 +6,8 @@ FROM n8nio/n8n:latest
 # Cambiar al usuario root para instalar paquetes
 USER root
 
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
 # Instalar Git, cron y un editor de texto (nano)
 RUN apk add --no-cache git openssh cron nano
 
