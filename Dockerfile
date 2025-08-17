@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Usar la imagen oficial de n8n como base
-FROM n8n-io/n8n:latest
+FROM n8nio/n8n:latest
 
 # Cambiar al usuario root para instalar paquetes
 USER root
