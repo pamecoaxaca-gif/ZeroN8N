@@ -7,7 +7,7 @@ FROM n8nio/n8n:latest
 USER root
 
 # Instalar Git, cron y un editor de texto (nano)
-RUN apk add --no-cache git openssh-client cron nano
+RUN apk add --no-cache git openssh cron nano
 
 # Crear directorio para el script de sincronización
 RUN mkdir -p /app/scripts
